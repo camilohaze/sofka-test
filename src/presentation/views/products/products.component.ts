@@ -30,6 +30,7 @@ import { ModalContent } from "@presentation/components/modal/directives/modal-co
 export class ProductsComponent {
   product?: ProductModel;
   products: ProductModel[] = [];
+  productsFiltered: ProductModel[] = [];
 
   private router: Router = inject(Router);
 
@@ -37,8 +38,20 @@ export class ProductsComponent {
     this.productRepository.getAll().subscribe({
       next: (products) => {
         this.products = products.data;
+        this.productsFiltered = products.data.slice(0, 5);
       },
     });
+  }
+
+  onFilterChange(e: any): void {
+    const { value } = e.target;
+
+    this.productsFiltered = this.products.slice(0, value);
+    console.log(e, value, 'onFilterChange');
+  }
+
+  onAddProduct(): void {
+    this.router.navigate(['product'])
   }
 
   onEdit(product: ProductModel): void {

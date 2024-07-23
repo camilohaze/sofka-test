@@ -1,1 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+label {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:hover,
+input:focus-visible {
+  border-width: 1px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+.column {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.ng-touched.ng-invalid,
+.ng-touched.ng-invalid:focus-visible {
+  border-color: red;
+}
+
+.errors {
+  color: red;
+}
+
+.button {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  color: #374572;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  border: none;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.button--secundary {
+  background-color: #eaecf2;
+}
+
+.button--secundary:hover {
+  color: rgb(156 163 175);
+}
+
+.button--secundary:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button--primary {
+  background-color: #b8af77;
+}
+
+.button--primary:hover {
+  color: #fff;
+}
+
+.button--primary:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}

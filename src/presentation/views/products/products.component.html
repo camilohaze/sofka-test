@@ -1,3 +1,13 @@
+<div class="actions">
+  <div class="actions__search">
+    <input type="text" id="search" name="search" placeholder="Buscar..." />
+  </div>
+  <div class="actions__create">
+    <button type="submit" class="button button--primary" (click)="onAddProduct()">
+      Agregar
+    </button>
+  </div>
+</div>
 <app-table>
   <th header>Logo</th>
   <th header>Nombre del producto</th>
@@ -5,7 +15,7 @@
   <th header>Fecha de liberación</th>
   <th header>Fecha de reestructuración</th>
   <th header></th>
-  @for (item of products; track item) {
+  @for (item of productsFiltered; track item) {
   <tr row>
     <td>
       <app-avatar [src]="item.logo"></app-avatar>
@@ -27,6 +37,16 @@
   </tr>
   }
 </app-table>
+<div class="paginator">
+  <div class="paginator__items">{{ productsFiltered.length }} Resultados</div>
+  <div class="paginator__filter">
+    <select id="filter" name="filter" (change)="onFilterChange($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+    </select>
+  </div>
+</div>
 
 <modal [open]="!!product" (onConfirm)="onConfirm($event)">
   <modal-content>

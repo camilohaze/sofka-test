@@ -147,7 +147,8 @@
   <card-reset>
     <button
       type="reset"
-      class="card__button card__button--secundary"
+      class="button button--secundary"
+      [disabled]="!!this.productId"
       (click)="onReset()"
     >
       Reiniciar
@@ -156,7 +157,7 @@
   <card-send>
     <button
       type="submit"
-      class="card__button card__button--primary"
+      class="button button--primary"
       (click)="onSubmit()"
     >
       Enviar
