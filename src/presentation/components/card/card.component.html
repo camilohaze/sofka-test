@@ -1,0 +1,11 @@
+<div class="card">
+  <span class="card__title">
+    <ng-content select="card-title"></ng-content>
+  </span>
+  <hr>
+  <ng-content select="card-content"></ng-content>
+  <div class="card__actions">
+    <ng-content select="card-reset"></ng-content>
+    <ng-content select="card-send"></ng-content>
+  </div>
+</div>

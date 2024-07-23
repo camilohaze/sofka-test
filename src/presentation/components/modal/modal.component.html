@@ -1,0 +1,25 @@
+<div #modal id="modal" class="modal">
+  <div class="modal__content">
+    <ng-content select="modal-content"></ng-content>
+
+    <hr>
+
+    <div class="modal__actions">
+      <button
+        type="reset"
+        class="modal__button modal__button--secundary"
+        (click)="cancel()"
+      >
+        Cancelar
+      </button>
+
+      <button
+        type="submit"
+        class="modal__button modal__button--primary"
+        (click)="confirm()"
+      >
+        Confirmar
+      </button>
+    </div>
+  </div>
+</div>

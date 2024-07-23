@@ -1,0 +1,165 @@
+<card [formGroup]="form" novalidate>
+  <card-title> Formulario de Registro </card-title>
+  <card-content>
+    <form>
+      <div class="row">
+        <div class="column">
+          <label for="id">ID</label>
+          <input type="text" id="id" name="id" formControlName="id" required />
+          @if(form.controls['id'].invalid && (form.controls['id'].dirty ||
+          form.controls['id'].touched)) {
+          <div class="errors">
+            @if (form.controls['id'].errors &&
+            form.controls['id'].errors['required']) {
+            <span>Este campo es requerido</span>
+            } @if (form.controls['id'].errors &&
+            form.controls['id'].errors['minlength']) {
+            <span>La longitud minima es 3.</span>
+            } @if (form.controls['id'].errors &&
+            form.controls['id'].errors['maxlength']) {
+            <span>La longitud maxima es 10.</span>
+            }
+          </div>
+          }
+        </div>
+        <div class="column">
+          <label for="name">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            formControlName="name"
+            required
+          />
+          @if(form.controls['name'].invalid && (form.controls['name'].dirty ||
+          form.controls['name'].touched)) {
+          <div class="errors">
+            @if (form.controls['name'].errors &&
+            form.controls['name'].errors['required']) {
+            <span>Este campo es requerido</span>
+            } @if (form.controls['name'].errors &&
+            form.controls['name'].errors['minlength']) {
+            <span>La longitud minima es 5.</span>
+            } @if (form.controls['name'].errors &&
+            form.controls['name'].errors['maxlength']) {
+            <span>La longitud maxima es 100.</span>
+            }
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <label for="description">Descripción</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            formControlName="description"
+            required
+          />
+          @if(form.controls['description'].invalid &&
+          (form.controls['description'].dirty ||
+          form.controls['description'].touched)) {
+          <div class="errors">
+            @if (form.controls['description'].errors &&
+            form.controls['description'].errors['required']) {
+            <span>Este campo es requerido</span>
+            } @if (form.controls['description'].errors &&
+            form.controls['description'].errors['minlength']) {
+            <span>La longitud minima es 10.</span>
+            } @if (form.controls['description'].errors &&
+            form.controls['description'].errors['maxlength']) {
+            <span>La longitud maxima es 200.</span>
+            }
+          </div>
+          }
+        </div>
+        <div class="column">
+          <label for="logo">Logo</label>
+          <input
+            type="text"
+            id="logo"
+            name="logo"
+            formControlName="logo"
+            required
+          />
+          @if(form.controls['logo'].invalid && (form.controls['logo'].dirty ||
+          form.controls['logo'].touched)) {
+          <div class="errors">
+            @if (form.controls['logo'].errors &&
+            form.controls['logo'].errors['required']) {
+            <span>Este campo es requerido</span>
+            }
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <label for="date_release">Fecha liberación</label>
+          <input
+            type="date"
+            id="date_release"
+            name="date_release"
+            [min]="minDate"
+            formControlName="date_release"
+            (change)="onChangeDateRelease($event)"
+            required
+          />
+          @if(form.controls['date_release'].invalid &&
+          (form.controls['date_release'].dirty ||
+          form.controls['date_release'].touched)) {
+          <div class="errors">
+            @if (form.controls['date_release'].errors &&
+            form.controls['date_release'].errors['required']) {
+            <span>Este campo es requerido</span>
+            }
+          </div>
+          }
+        </div>
+        <div class="column">
+          <label for="date_revision">Fecha revisión</label>
+          <input
+            type="date"
+            id="date_revision"
+            name="date_revision"
+            formControlName="date_revision"
+            [value]="oneYear"
+            required
+          />
+          @if(form.controls['date_revision'].invalid &&
+          (form.controls['date_revision'].dirty ||
+          form.controls['date_revision'].touched)) {
+          <div class="errors">
+            @if (form.controls['date_revision'].errors &&
+            form.controls['date_revision'].errors['required']) {
+            <span>Este campo es requerido</span>
+            }
+          </div>
+          }
+        </div>
+      </div>
+    </form>
+  </card-content>
+  <card-reset>
+    <button
+      type="reset"
+      class="card__button card__button--secundary"
+      (click)="onReset()"
+    >
+      Reiniciar
+    </button>
+  </card-reset>
+  <card-send>
+    <button
+      type="submit"
+      class="card__button card__button--primary"
+      (click)="onSubmit()"
+    >
+      Enviar
+    </button>
+  </card-send>
+</card>

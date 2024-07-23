@@ -1,0 +1,8 @@
+<button class="menu__trigger" (click)="openMenu($event)">
+  <span class="material-symbols-rounded">more_vert</span>
+</button>
+<div #menu id="menu" class="menu">
+  <div class="menu__list">
+    <ng-content select="menu-item"></ng-content>
+  </div>
+</div>

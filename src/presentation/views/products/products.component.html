@@ -1,0 +1,35 @@
+<app-table>
+  <th header>Logo</th>
+  <th header>Nombre del producto</th>
+  <th header>Descripción</th>
+  <th header>Fecha de liberación</th>
+  <th header>Fecha de reestructuración</th>
+  <th header></th>
+  @for (item of products; track item) {
+  <tr row>
+    <td>
+      <app-avatar [src]="item.logo"></app-avatar>
+    </td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.description }}</td>
+    <td>{{ item.date_release }}</td>
+    <td>{{ item.date_revision }}</td>
+    <td>
+      <menu>
+        <menu-item (click)="onEdit(item)">Editar</menu-item>
+        <menu-item (click)="onRemove(item)">Eliminar</menu-item>
+      </menu>
+    </td>
+  </tr>
+  } @empty {
+  <tr row>
+    <td colspan="6">Sin resultados</td>
+  </tr>
+  }
+</app-table>
+
+<modal [open]="!!product" (onConfirm)="onConfirm($event)">
+  <modal-content>
+    ¿Esta seguro de eliminar el producto {{ product?.name }}?
+  </modal-content>
+</modal>

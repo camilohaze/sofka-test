@@ -1,0 +1,32 @@
+.menu {
+  display: none;
+  position: absolute;
+  width: max-content;
+  background-color: #f0f0f0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.menu__trigger {
+  border-width: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.menu__trigger:hover {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__item {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,47 @@
+.wrapper {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table tr {
+  border-bottom: 1px solid rgb(238 240 244);
+}
+
+table th {
+  background-color: rgba(242, 242, 242, 0.7);
+  padding: 16px;
+}
+
+table td {
+  padding: 8px;
+}
+
+table th,
+table td {
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  width: 5px;
+  height: 5px;
+}
