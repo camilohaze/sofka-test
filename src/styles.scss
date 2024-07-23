@@ -31,7 +31,7 @@ input:focus-visible {
 
 .column {
   display: flex;
-  flex: auto;
+  flex: 1;
   flex-direction: column;
   padding: 0 1rem;
 }
