@@ -1,9 +1,20 @@
 <div class="actions">
   <div class="actions__search">
-    <input type="text" id="search" name="search" placeholder="Buscar..." />
+    <input
+      #query
+      type="text"
+      id="search"
+      name="search"
+      placeholder="Buscar..."
+      (input)="onSearch(query.value)"
+    />
   </div>
   <div class="actions__create">
-    <button type="submit" class="button button--primary" (click)="onAddProduct()">
+    <button
+      type="submit"
+      class="button button--primary"
+      (click)="onAddProduct()"
+    >
       Agregar
     </button>
   </div>
