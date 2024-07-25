@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-import { ProductRepository } from 'src/domain/repositories/product.repository';
-import { GetProductUseCase } from 'src/domain/usecases/get-products.usecase';
-import { PostProductUseCase } from 'src/domain/usecases/post-product.usecase';
-import { PutProductUseCase } from 'src/domain/usecases/put-product.usecase';
-import { RemoveProductUseCase } from 'src/domain/usecases/remove-product.usecase';
-import { ValidationProductUseCase } from 'src/domain/usecases/validation-product.usecase';
+import { ProductRepository } from '@domain/repositories/product.repository';
+import { GetProductUseCase } from '@domain/usecases/get-products.usecase';
+import { PostProductUseCase } from '@domain/usecases/post-product.usecase';
+import { PutProductUseCase } from '@domain/usecases/put-product.usecase';
+import { RemoveProductUseCase } from '@domain/usecases/remove-product.usecase';
+import { ValidationProductUseCase } from '@domain/usecases/validation-product.usecase';
 import { ProductImplementationRepository } from './repositories/product/product-implementation.repository';
 
 const productsUseCaseFactory = (productRepository: ProductRepository) =>

@@ -1,5 +1,26 @@
 # SofkaTest
 
+Proyecto para gestionar la creación de productos financieros.
+
+## Listado de productos financieros
+Se requiere que la aplicación permita visualizar su listado de productos financieros agregados.
+
+## Busqueda de productos financieros
+Se requiere que la aplicación permita filtrar los productos mediante un campo de texto y su nombre.
+
+## Cantidad de registros
+Se requiere que la aplicación permita visualizar el total de items listados y modificarlo entre 5, 10 y 20 items.
+
+## Agregar un producto
+Se requiere que la aplicación permita la creación de nuevos productos financieros.
+
+## Editar un producto
+Se requiere que la aplicacion permita la edición de sus productos financieros.
+
+## Eliminar un producto
+Se requiere que la aplicación permita la eliminación de sus productos confirmando dicha acción.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
 ## Development server
@@ -16,7 +37,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Jest].
 
 ## Running end-to-end tests
 

@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { ProductEntity } from './entities/product-entity';
-import { ProductRepository } from 'src/domain/repositories/product.repository';
-import { ProductResponseModel } from 'src/domain/models/product-response.model';
-import { ProductModel } from 'src/domain/models/product.model';
-import { ProductRemoveModel } from 'src/domain/models/product-remove.model';
+import { ProductRepository } from '@domain/repositories/product.repository';
+import { ProductResponseModel } from '@domain/models/product-response.model';
+import { ProductModel } from '@domain/models/product.model';
+import { ProductRemoveModel } from '@domain/models/product-remove.model';
 
 @Injectable({
   providedIn: 'root',

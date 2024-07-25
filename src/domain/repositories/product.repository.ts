@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
 
-import { ProductResponseModel } from '../models/product-response.model';
-import { ProductRemoveModel } from '../models/product-remove.model';
-import { ProductModel } from '../models/product.model';
+import { ProductResponseModel } from '@domain/models/product-response.model';
+import { ProductRemoveModel } from '@domain/models/product-remove.model';
+import { ProductModel } from '@domain/models/product.model';
 
 export abstract class ProductRepository {
   abstract getAll(): Observable<ProductResponseModel<ProductModel[]>>;

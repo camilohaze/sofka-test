@@ -34,8 +34,11 @@ export class ProductsComponent {
   items: number = 5;
 
   private router: Router = inject(Router);
+  private productRepository: ProductImplementationRepository = inject(
+    ProductImplementationRepository
+  );
 
-  constructor(private productRepository: ProductImplementationRepository) {
+  constructor() {
     this.productRepository.getAll().subscribe({
       next: (products) => {
         this.products = products.data;
@@ -76,6 +79,12 @@ export class ProductsComponent {
       this.productRepository.remove(id).subscribe({
         next: (response) => {
           alert(response.message);
+
+          const index = this.products.findIndex((p) => p.id === id);
+
+          this.products.splice(index, 1);
+          this.products = this.products;
+          this.productsFiltered = this.products.slice(0, this.items);
 
           this.product = undefined;
         },

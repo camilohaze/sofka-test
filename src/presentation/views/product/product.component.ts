@@ -39,6 +39,11 @@ export class ProductComponent {
   minDate: string = this.formatDate(this.min);
   oneYear: string = this.addOneYear(this.min).toLocaleDateString();
 
+  private router: Router = inject(Router);
+  private activatedRoute = inject(ActivatedRoute);
+  private formBuilder = inject(FormBuilder);
+  private productRepository = inject(ProductImplementationRepository);
+
   form: FormGroup = this.formBuilder.group({
     id: new FormControl('', [
       Validators.required,
@@ -62,13 +67,7 @@ export class ProductComponent {
     ]),
   });
 
-  private router: Router = inject(Router);
-  private activatedRoute = inject(ActivatedRoute);
-
-  constructor(
-    private formBuilder: FormBuilder,
-    private productRepository: ProductImplementationRepository
-  ) {
+  constructor() {
     this.productId = this.activatedRoute.snapshot.params['id'];
 
     if (!!this.productId) {

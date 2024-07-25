@@ -56,6 +56,6 @@ export class ModalComponent {
   }
 
   confirm(): void {
-    this.onConfirm.emit(false);
+    this.onConfirm.emit(true);
   }
 }

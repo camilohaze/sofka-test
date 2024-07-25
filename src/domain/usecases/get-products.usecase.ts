@@ -1,10 +1,10 @@
 import { Observable } from 'rxjs';
 
-import { UseCase } from 'src/base/use-case';
+import { UseCase } from '@base/use-case';
 
-import { ProductResponseModel } from '../models/product-response.model';
-import { ProductModel } from '../models/product.model';
-import { ProductRepository } from '../repositories/product.repository';
+import { ProductResponseModel } from '@domain/models/product-response.model';
+import { ProductModel } from '@domain/models/product.model';
+import { ProductRepository } from '@domain/repositories/product.repository';
 
 export class GetProductUseCase
   implements UseCase<void, ProductResponseModel<ProductModel[]>>
